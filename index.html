@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	$(function(){
+
+		var answer;
+		var answers = new Array();
+
+		$('span.answer').on('click', function(){
+			$(this).parent().children('span').each(function(){
+				$(this).removeClass('current');
+			})
+			$(this).addClass('current');
+			answer = $(this).attr('id').replace(/answer/g,'');
+		})
+
+		$('.button').on('click', function(){
+
+			if(answer){
+
+				answers.push(answer);
+
+				console.log(answers);
+
+				$(this).parent().animate({
+					left: "-1000px",
+				}, 800).fadeOut(800);
+				var buttonNum = $(this).attr('id');
+
+				if(buttonNum == 'button4'){
+					var result = answers.join('');
+					var result_url;
+
+					console.log(result);
+
+					switch(result){
+						case '1a2a3a4a':
+							result_url = 'result01.html';
+							break;
+						case '1a2a3a4b':
+							result_url = 'result02.html';
+							break;
+						case '1a2a3b4a':
+							result_url = 'result03.html';
+							break;
+						case '1a2a3b4b':
+							result_url = 'result04.html';
+							break;
+						case '1a2b3a4a':
+							result_url = 'result05.html';
+							break;
+						case '1a2b3a4b':
+							result_url = 'result06.html';
+							break;
+						case '1a2b3b4a':
+							result_url = 'result07.html';
+							break;
+						case '1a2b3b4b':
+							result_url = 'result08.html';
+							break;
+						case '1b2a3a4a':
+							result_url = 'result09.html';
+							break;
+						case '1b2a3a4b':
+							result_url = 'result10.html';
+							break;
+						case '1b2a3b4a':
+							result_url = 'result11.html';
+							break;
+						case '1b2a3b4b':
+							result_url = 'result12.html';
+							break;
+						case '1b2b3a4a':
+							result_url = 'result13.html';
+							break;
+						case '1b2b3a4b':
+							result_url = 'result14.html';
+							break;
+						case '1b2b3b4a':
+							result_url = 'result15.html';
+							break;
+						case '1b2b3b4b':
+							result_url = 'result16.html';
+							break;
+					}
+					console.log(result_url);
+					window.location.href = './' + result_url;
+				}
+
+				var questionNum = parseInt(buttonNum.replace(/button/g, '')) + 1;
+				var questionNum = 'question' + questionNum;
+				$('#'+questionNum).fadeIn(1500);
+
+				answer = '';
+
+			}
+
+		})
+	})
+</script>
+</head>
+<body>
+	<div id="content">
+		<div id="question1" class="question">
+			<p>質問1： 性別は？</p>
+			<div class="answers"><span id="answer1a" class="answer">男</span><span id="answer1b" class="answer">女</span></div>
+			<div id="button1" class="button">次へ</div>
+		</div><!-- question -->
+		<div id="question2" class="question">
+			<p>質問2： インドア派、アウトドア派？</p>
+			<div class="answers"><span id="answer2a" class="answer">インドア派</span><span id="answer2b" class="answer">アウトドア派</span></div>
+			<div id="button2" class="button">次へ</div>
+		</div><!-- question -->
+		<div id="question3" class="question">
+			<p>質問3： 肉派、魚派？</p>
+			<div class="answers"><span id="answer3a" class="answer">肉派</span><span id="answer3b" class="answer">魚派</span></div>
+			<div id="button3" class="button">次へ</div>
+		</div><!-- question -->
+		<div id="question4" class="question">
+			<p>質問4： 夏派、冬派？</p>
+			<div class="answers"><span id="answer4a" class="answer">夏派</span><span id="answer4b" class="answer">冬派</span></div>
+			<div id="button4" class="button">次へ</div>
+		</div><!-- question -->
+	</div><!-- content -->
+</body>
+</html>
