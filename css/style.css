@@ -1,0 +1,113 @@
+﻿@charset "utf-8";
+
+/* base
+--------------------------------------------*/
+* {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+/*
+--------------------------------------------*/
+body {
+  background-color: #FFFFFF;
+}
+#content {
+  position: relative;
+  width: 500px;
+  margin: 30px auto 0;
+  padding: 30px;
+}
+.question {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 500px;
+  padding: 30px;
+  background-color: #FFF;
+}
+.question p {
+  margin-bottom: 60px;
+  font-size: 150%;
+  font-weight: bold;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #36382E;
+}
+#question1 {
+  display: block;
+}
+.answers {
+  margin-bottom: 80px;
+  text-align: center;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #A39BA8;
+}
+.answers span:hover {
+  color: #272D2D;
+}
+.answer {
+  display: inline-block;
+  margin: 0 60px;
+  cursor: pointer;
+}
+.answers span {
+  font-size: 120%;
+}
+.answers span:before {
+  content: '□ ';
+}
+.answers span.current:before {
+  content: '■ ';
+  color: #272D2D;
+}
+.answers span.current {
+  font-weight: bold;
+  color: #272D2D;
+}
+.button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #DDEBF9;
+  text-align: center;
+  cursor: pointer;
+  background-color: #FF4940;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #FFFFFF;
+}
+
+/* Result Page */
+.result #content {
+  background-color: #FFF;
+}
+.result #content h1 {
+  font-size: 160%;
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #36382E;
+}
+.result #content p {
+  margin-bottom: 150px;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #36382E;
+}
+.result #content div {
+  width: 300px;
+  margin: 0 auto;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #FF4940;
+}
+.result #content div a {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #FF4940;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #FF4940;
+}
+.result #content div a:hover {
+  background-color: #FF4940;
+  color: #FFFFFF;
+}
