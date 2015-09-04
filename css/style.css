@@ -43,7 +43,7 @@ body {
   color: #A39BA8;
 }
 .answers span:hover {
-  color: #272D2D;
+	color: #272D2D;
 }
 .answer {
   display: inline-block;
